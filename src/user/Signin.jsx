@@ -1,9 +1,11 @@
 import React from 'react';
-
+import Layout from '../core/Layout'
 
 const Signin = () => {
     return ( 
-        <div>Signin</div>
+        <Layout title="signin" description="signin node react ecommerce">
+        ...
+    </Layout>
      );
 }
  
