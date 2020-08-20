@@ -40,6 +40,7 @@ const Shop = () => {
              setError(data.error)
          }else{
             setFilteredResults(data.data)
+            console.log(data)
             setSize(data.size)
             setSkip(0)
          }
@@ -72,11 +73,12 @@ const Shop = () => {
     useEffect(()=>{
         init()
         loadFilteredResults(skip,limit,myFilters.filters)
+        console.log(myFilters)
     },[])
 
 
     const handleFilters = (filters,filterBy) => {
-        console.log(filters,filterBy)
+        console.log(myFilters)
         const newFilters = {...myFilters}
         newFilters.filters[filterBy] = filters
 

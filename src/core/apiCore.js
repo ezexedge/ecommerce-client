@@ -34,6 +34,7 @@ export const getFilteredProducts = (skip,limit,filters) => {
             body: JSON.stringify(data)
         })
         .then(response => {
+            
             return response.json()
         })
         .catch(err => {
