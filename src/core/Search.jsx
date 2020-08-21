@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import Layout from './Layout'
-import {getCategories} from './apiCore'
+import {getCategories , list} from './apiCore'
 import Card from './Card'
 
 const Search = () => {
@@ -9,12 +9,12 @@ const Search = () => {
         categories: [],
         category: '',
         search: '',
-        result: [],
+        results: [],
         searched: false
         
     })
 
-    const {categories , category , search , result , searched} = data
+    const {categories , category , search , results , searched} = data
 
     const loadCategories = () => {
         getCategories().then(data => {
@@ -30,14 +30,43 @@ const Search = () => {
         loadCategories()
     },[])
 
-    const searchSubmit =  () => {
+
+    const searchData = () =>{
+      //  console.log(search,category)
+
+      if(search){
+          list({search: search || undefined, category: category})
+          .then(response => {
+              if(response.error){
+                  console.log(response.error)
+              }else{
+                  setData({...data,results: response,searched: true})
+              }
+          })
+      }
+    }
+
+    const searchSubmit =  (e) => {
+        e.preventDefault()
+        searchData()
+    }
+
+    const handleChange = name => event => {
+
+
+        setData({...data, [name]: event.target.value,searched:false})
 
     }
 
-    const handleChange = () => {
 
+
+    const searchedProduct = (results = []) => {
+        return(
+            <div className="row">
+                {results.map((product,i)=>(<Card key={i} product={product} />))}
+            </div>
+        )
     }
-
     const searchForm = () => (
         <form onSubmit={searchSubmit}>
             <span className="input-group-text">
@@ -63,8 +92,13 @@ const Search = () => {
 
     return (
         <div className="row mb-4">
-            <div className="container">{searchForm()}</div>
+            <div className="container mb-3">{searchForm()}</div>
+
+            <div className="container-fluid mb-3">{searchedProduct(results)}</div>
+
         </div>
+
+        
       );
 }
  
