@@ -7,51 +7,56 @@ import Search from './Search'
 import Checkout from './Checkout'
 
 const Cart = () => {
-    const [items,setItems] = useState([])
-    
-    useEffect(()=>{
-        setItems(getCart())
-    },[items])
+    const [items, setItems] = useState([]);
+    const [run, setRun] = useState(false);
 
+    useEffect(() => {
+        setItems(getCart());
+    }, [run]);
 
     const showItems = items => {
-        return(
+        return (
             <div>
-                <h2>your cart hast {`${items.length}`} items</h2>
-
-                <hr/>
-
-                {items.map((product,i)=>(<Card key={i} product={product} 
-                showAddToCartButton={false} cartUpdate={true} showRemoveProductButton={true}/>)
-                )}
+                <h2>Your cart has {`${items.length}`} items</h2>
+                <hr />
+                {items.map((product, i) => (
+                    <Card
+                        key={i}
+                        product={product}
+                        showAddToCartButton={false}
+                        cartUpdate={true}
+                        showRemoveProductButton={true}
+                        setRun={setRun}
+                        run={run}
+                    />
+                ))}
             </div>
-        )
-    }
+        );
+    };
 
-    const noItemsMassage = () => (
-        <h2>your cart is empty <br/> <Link to="/shop">Continue shiopping</Link></h2>
-    )
+    const noItemsMessage = () => (
+        <h2>
+            Your cart is empty. <br /> <Link to="/shop">Continue shopping</Link>
+        </h2>
+    );
 
-    return ( 
-        <Layout title="Shopping cart" description="agrega articulos al carro" className="container-fluid">
-            <Search/>
+    return (
+        <Layout
+            title="Shopping Cart"
+            description="Manage your cart items. Add remove checkout or continue shopping."
+            className="container-fluid"
+        >
+            <div className="row">
+                <div className="col-6">{items.length > 0 ? showItems(items) : noItemsMessage()}</div>
 
-        <div className="row">
-            <div className="col-6">
-                {items.length > 0 ? showItems(items) : noItemsMassage()}
+                <div className="col-6">
+                    <h2 className="mb-4">Your cart summary</h2>
+                    <hr />
+                    <Checkout products={items} setRun={setRun} run={run} />
+                </div>
             </div>
-
-            <div className="col-6">
-                <p>Show checkout options/shipping address/total/update quantity</p>
-            <h2 className="mb-4">Your cart summary</h2>
-
-            <hr/>
-            <Checkout products={items} />
-
-            </div>
-        </div>
         </Layout>
-     );
-}
- 
+    );
+};
+
 export default Cart;

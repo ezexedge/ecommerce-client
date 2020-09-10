@@ -77,8 +77,8 @@ const Card = ({product, showViewProductButton = true, showAddToCartButton = true
                   <div className="card-body">
                       {shouldRedirect(redirect)}
                       <ShowImage item={product} url="product" />
-                      <p class="lead mt-2" >{product.description}</p>
-                        <p class="black-10">${product.price}</p>
+                      <p className="lead mt-2" >{product.description}</p>
+                        <p className="black-10">${product.price}</p>
                         <p className="black-8">Category: {product.category && product.category.name}</p>
                         <p className="black-8">
                             creado  {moment(product.createdAt).fromNow()}

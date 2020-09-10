@@ -1,5 +1,3 @@
-
-
 export const signup = (user) => {
 return fetch(`http://localhost:8000/api/signup`,{
         method: "POST",
