@@ -35,9 +35,9 @@ const Product = (props) => {
 
     return ( 
         <Layout title={product.name} description={product && product.description && product.description.substring(0,50) + '....'} className="container-fluid">
-            <p>Product page</p>
+            <p>Pagina de producto</p>
 
-            <h2 className="mb-4">Single Product</h2>
+            <h2 className="mb-4">Producto</h2>
             <div className="row">
                 <div className="col-8">
                 
@@ -46,7 +46,7 @@ const Product = (props) => {
                        
                 </div>
                 <div className="col-4">
-                    <h4>Related Products</h4>
+                    <h4>Productos relacionados</h4>
                     {relatedProduct.map((p,i)=>(
                         <div className="mb-3">
                             <Card key={i} product={p}/>

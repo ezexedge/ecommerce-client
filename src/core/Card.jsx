@@ -10,8 +10,8 @@ const Card = ({product, showViewProductButton = true, showAddToCartButton = true
     const showViewButton = (showViewProductButton) => {
         return (
             showViewProductButton && (
-                <button className="btn btn-warning mt-2 mb-2">
-                    View Product
+                <button className="btn btn-success mt-2 mb-2 mr-3">
+                    Ver Producto
                 </button>
             ) 
         )
@@ -39,8 +39,8 @@ const Card = ({product, showViewProductButton = true, showAddToCartButton = true
     const showAddToCart = showAddToCartButton => {
         return(
             showAddToCartButton && ( 
-            <button onClick={addToCart} className="btn btn-outline-warning mt-2 mb-2">
-            Add to card
+            <button onClick={addToCart} className="btn btn-outline-success  mt-2 mb-2">
+            Agregar a carro
         </button>
             )
         )
@@ -50,7 +50,7 @@ const Card = ({product, showViewProductButton = true, showAddToCartButton = true
         return(
             showRemoveProductButton && ( 
             <button onClick={()=> removeItem(product._id)} className="btn btn-outline-danger mt-2 mb-2">
-            Remove Product
+            Eliminar Producto
         </button>
             )
         )
@@ -60,7 +60,7 @@ const Card = ({product, showViewProductButton = true, showAddToCartButton = true
         return cartUpdate && <div>
             <div className="input-group mb-3">
                 <div className="input-group-prepend">
-                    <span className="input-group-text">Adjust quantity</span>
+                    <span className="input-group-text">Ajustar cantidad</span>
                 </div>
                 <input type="number" className="form-control" value={count} onChange={handleChange(product._id)}/>
             </div>
@@ -68,7 +68,7 @@ const Card = ({product, showViewProductButton = true, showAddToCartButton = true
     }
 
     const showStock = (quantity) => {
-        return quantity > 0 ? <span className="badge badge-primary badge-pill">In stock</span> : <span className="badge badge-primary badge-pill">Out of stock</span>
+        return quantity > 0 ? <span className="badge badge-primary badge-pill">Hay stock</span> : <span className="badge badge-primary badge-pill">No hay stock</span>
     }
     return(
        
@@ -79,7 +79,7 @@ const Card = ({product, showViewProductButton = true, showAddToCartButton = true
                       <ShowImage item={product} url="product" />
                       <p className="lead mt-2" >{product.description}</p>
                         <p className="black-10">${product.price}</p>
-                        <p className="black-8">Category: {product.category && product.category.name}</p>
+                        <p className="black-8">Categoria: {product.category && product.category.name}</p>
                         <p className="black-8">
                             creado  {moment(product.createdAt).fromNow()}
                         </p>

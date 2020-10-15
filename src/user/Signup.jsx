@@ -45,7 +45,7 @@ const Signup = () => {
     const signUpForm = () => (
         <form>
             <div className="form-group">
-                <label className="text-muted">Name</label>
+                <label className="text-muted">Nombre</label>
                 <input onChange={handleChange('name')} value={name} type="text" className="form-control"/>
 
             </div>
@@ -59,7 +59,7 @@ const Signup = () => {
                 <label className="text-muted">Password</label>
                 <input onChange={handleChange('password')} value={password} type="password" className="form-control"/>
             </div>
-            <button onClick={clickSubmit} className="btn btn-primary">submit</button>
+            <button onClick={clickSubmit} className="btn btn-primary">Enviar</button>
         </form>
     )
 

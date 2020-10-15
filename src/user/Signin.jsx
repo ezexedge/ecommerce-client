@@ -54,7 +54,7 @@ const Signin = () => {
                 <label className="text-muted">Password</label>
                 <input onChange={handleChange('password')} value={password} type="password" className="form-control"/>
             </div>
-            <button onClick={clickSubmit} className="btn btn-primary">submit</button>
+            <button onClick={clickSubmit} className="btn btn-primary">Enviar</button>
         </form>
     )
 
@@ -65,7 +65,7 @@ const Signin = () => {
         </div>
     )
 
-      const showLoading = () =>  loading && (<div className="alert alert-info"><h2>Loading..</h2></div>)
+      const showLoading = () =>  loading && (<div className="alert alert-info"><h2>Cargando..</h2></div>)
       
 
 

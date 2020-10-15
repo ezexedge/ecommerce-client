@@ -52,7 +52,7 @@ const Checkout = ({products, setRun = f => f , run = false}) => {
         ): (
             <Link to="/signin">
                 <button className="btn btn-primary">
-                    Sign in to checkout
+                    debes iniciar sesion
                 </button>
             </Link>
         )
@@ -122,12 +122,12 @@ const Checkout = ({products, setRun = f => f , run = false}) => {
                 <div>
 
                     <div className="gorm-group mb-3">
-                        <label className="text-muted">Delivery address:</label>
+                        <label className="text-muted">domicilio para envios:</label>
                         <textarea
                             onChange={handleAddress}
                             className="form-control"
                             value={data.address}
-                            placeholder="Type your delivery address here..."
+                            placeholder="ingresa tu domicilio."
                         />
                     </div>
 
@@ -153,11 +153,11 @@ const Checkout = ({products, setRun = f => f , run = false}) => {
 
       const showSuccess = success => ( 
         <div className="alert alert-info" style={{display: success ? '' : 'none'}}>
-            Thanks ! your payment was successful!
+            Muchas gracias por tu compra!
         </div>
     )
 
-    const showLoading = (loading) => loading && <h2>Loading...</h2>
+    const showLoading = (loading) => loading && <h2>Cargando...</h2>
     return (  
         <div>
             <h2>Total : ${getTotal()}</h2>

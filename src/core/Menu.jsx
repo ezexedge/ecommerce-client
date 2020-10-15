@@ -15,7 +15,7 @@ const Menu = ({ history }) => {
     return (
 
         <div>
-            <ul className="nav nav-tabs bg-primary">
+            <ul className="nav nav-tabs bg-success">
                 <li className="nav-item">
                     <Link className="nav-link" style={isActive(history,'/')} to="/">Home</Link>
               </li>  
@@ -55,12 +55,12 @@ const Menu = ({ history }) => {
                     
                          
                 <li className="nav-item">
-                    <Link className="nav-link" style={isActive(history,'/signin')} to="/signin">Signin</Link>
+                    <Link className="nav-link" style={isActive(history,'/signin')} to="/signin">Inicio sesion</Link>
                     
                 </li>
                 
                 <li className="nav-item">
-                    <Link className="nav-link" style={isActive(history,'/signup')} to="/signup">Signup</Link>
+                    <Link className="nav-link" style={isActive(history,'/signup')} to="/signup">Crar Cuenta</Link>
                     
                 </li>
                     
@@ -75,7 +75,7 @@ const Menu = ({ history }) => {
                     <span className="nav-link" style={{cursor: 'pointer', color: '#fff'}} onClick={()=> signout(()=>{
                         history.push("/")
                     }
-                )}>Signout</span>
+                )}>Cerrar Sesion</span>
                     
                 </li>
                     

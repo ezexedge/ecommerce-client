@@ -95,9 +95,9 @@ const Search = () => {
                     <input type="search"
                     className="form-control"
                     onChange={handleChange('search')}
-                    placeholder="search by name"
+                    placeholder="Buscar por nombre"
                     />
-                    <button className="input-group-text">Search</button>
+                    <button className="input-group-text">Buscar</button>
                 </div>
             </span>
         </form>

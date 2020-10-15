@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../core/Layout'
 import {isAuthenticated} from '../auth'
 import {Link} from 'react-router-dom'
+
 const AdminDashboard = () => {
 //es un destructurin de un json
     const  {user:{_id,name,email,role}} = isAuthenticated()
@@ -32,6 +33,13 @@ const AdminDashboard = () => {
 
                         </li>
 
+                        <li className="list-group-item">
+
+                             <Link className="nav-link" to="/admin/products">Manege Products</Link>
+
+
+                        </li>
+
                 </ul>
             </div>
         )
@@ -55,7 +63,7 @@ const AdminDashboard = () => {
 
 
     return (
-        <Layout title="AdminDashboard" description={`G'day ${name}`} className="container-fluid">
+        <Layout title="resumen de usuario" description={`Hola ${name}`} className="container-fluid">
             <div  className="row">
 
                 <div className="col-3" >
