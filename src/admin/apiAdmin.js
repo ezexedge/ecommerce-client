@@ -1,6 +1,6 @@
 import {API} from '../config'
 export const createCategory = (userId,token,category) => {
-return fetch(`http://localhost:8000/api/category/create/${userId}`,{
+return fetch(`${API}/category/create/${userId}`,{
         method: "POST",
         headers: {
             Accept: 'application/json',
@@ -19,7 +19,7 @@ return fetch(`http://localhost:8000/api/category/create/${userId}`,{
 
 
 export const createProduct2 = (userId,token,product) => {
-return fetch(`http://localhost:8000/api/product/create/${userId}`,{
+return fetch(`${API}/product/create/${userId}`,{
         method: "POST",
         headers: {
             Accept: 'application/json',

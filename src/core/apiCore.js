@@ -25,7 +25,7 @@ export const getFilteredProducts = (skip,limit,filters) => {
     const data= {
         limit,skip,filters
     }
-    return fetch(`http://localhost:8000/api/products/by/search`,{
+    return fetch(`${API}/products/by/search`,{
             method: "POST",
             headers: {
                 Accept: 'application/json',
