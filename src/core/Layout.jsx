@@ -1,5 +1,6 @@
 import React from 'react';
 import Menu from './Menu'
+import Footer from './Footer'
 import '../styles.css'
 const Layout = ({ title="titulo" , description="descripcion" ,className,children }) => {
     return ( 
@@ -12,6 +13,7 @@ const Layout = ({ title="titulo" , description="descripcion" ,className,children
             <div className={className}>
                 {children}
             </div>
+        <Footer/>
      </div>
      );
 }
