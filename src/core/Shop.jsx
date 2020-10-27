@@ -55,7 +55,7 @@ const Shop = () => {
             if(data.error){
                 setError(data.error)
             }else{
-               setFilteredResults([...filteredResults,data.data[0]])
+               setFilteredResults([...filteredResults,...data.data])
                setSize(data.size)
                setSkip(toSkip)
             }
